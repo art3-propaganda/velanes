@@ -1,57 +1,970 @@
-<!doctype html>
+<!DOCTYPE html>
+<html lang="pt-br">
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% seo %}
+    {% feed_meta %}
 
-		{% seo %}
-		{% feed_meta %}
+    {% if jekyll.environment == 'production' and site.google_analytics_key != '' %}
+            <script>
+                window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+                ga('create', '{{ site.google_analytics_key }}', 'auto');
+                ga('send', 'pageview');
+            </script>
+            <script async src='https://www.google-analytics.com/analytics.js'></script>
+        {% endif %}
+        <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    
+</head>
 
-		<link href="//fonts.googleapis.com/css?family=Antic+Slab|Fira+Sans" rel="stylesheet">
-		<link rel="stylesheet" media="screen" href="{{ site.baseurl }}/css/screen.css">
-		{% if page.print_stylesheet %}
-			<link rel="stylesheet" media="print" href="{{ site.baseurl }}/css/print.css">
-		{% endif %}
-		<link rel="icon" type="image/png" href="{{ site.baseurl }}/images/favicon.png">
+<body id="top" class="has-header-search">
+    <!--  favicon -->
+    <link rel="shortcut icon" href="{{ site.baseurl }}/assets/img/ico/favicon.png">
+    <!--  apple-touch-icon -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ site.baseurl }}/assets/img/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ site.baseurl }}/assets/img/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ site.baseurl }}/assets/img/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="{{ site.baseurl }}/assets/img/ico/apple-touch-icon-57-precomposed.png">
+    <!-- Material Icons CSS -->
+    <link href="{{ site.baseurl }}/assets/fonts/iconfont/material-icons.css" rel="stylesheet">
+    <!-- FontAwesome CSS -->
+    <link href="{{ site.baseurl }}/assets/fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- magnific-popup -->
+    <link href="{{ site.baseurl }}/assets/magnific-popup/magnific-popup.css" rel="stylesheet">
+    <!-- flexslider -->
+    <link href="{{ site.baseurl }}/assets/flexSlider/flexslider.css" rel="stylesheet">
+    <!-- materialize -->
+    <link href="{{ site.baseurl }}/assets/materialize/css/materialize.min.css" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="{{ site.baseurl }}/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- shortcodes -->
+    <link href="{{ site.baseurl }}/assets/css/shortcodes/shortcodes.css" rel="stylesheet">
+    <!-- Style CSS -->
+    <link href="{{ site.baseurl }}/assets/style.css" rel="stylesheet">
 
-		{% if jekyll.environment == 'production' and site.google_analytics_key != '' %}
-			<script>
-				window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-				ga('create', '{{ site.google_analytics_key }}', 'auto');
-				ga('send', 'pageview');
-			</script>
-			<script async src='https://www.google-analytics.com/analytics.js'></script>
-		{% endif %}
-		<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-	</head>
-	<body>
-		{% include navigation.html %}
-		<header>
-			<a href="{{site.baseurl }}/">
-				<img src="{{ site.baseurl }}/images/logo.svg" width="180" alt="logo">
-			</a>
-		</header>
-		<div class="container main-content">
-			<section class="content">{{ content }}</section>
-			{% include sidebar.html %}
-		</div>
-		<footer>
-			<div class="container">
-				<hr>
-				&copy; {{ site.title }} {{ site.time | date: "%Y" }}. All rights reserved.
-			</div>
-		</footer>
-		<script>
-		  if (window.netlifyIdentity) {
-		    window.netlifyIdentity.on("init", user => {
-		      if (!user) {
-		        window.netlifyIdentity.on("login", () => {
-		          document.location.href = "/admin/";
-		        });
-		      }
-		    });
-		  }
-		</script>
-	</body>
+    <!-- owl.carousel -->
+    <link href="{{ site.baseurl }}/assets/owl.carousel/assets/owl.carousel.css" rel="stylesheet">
+    <link href="{{ site.baseurl }}/assets/owl.carousel/assets/owl.theme.default.min.css" rel="stylesheet">
+    <!-- RS5.0 Main Stylesheet -->
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/revolution/css/settings.css">
+    <!-- RS5.0 Layers and Navigation Styles -->
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/revolution/css/layers.css">
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/revolution/css/navigation.css">
+
+    <style type="text/css">
+        .believe-section img,
+        .mission-section img {
+            width: 100%;
+        }
+        /*believe-wrapper*/
+        
+        .believe-wrapper {
+            padding: 50px 120px;
+        }
+        /*mission-wrapper*/
+        
+        .mission-wrapper {
+            padding: 50px 100px;
+        }
+        
+        @media screen and (max-width: 991px) {
+            .believe-wrapper,
+            .mission-wrapper {
+                padding: 50px 30px;
+            }
+        }
+        
+        .mission-wrapper .featured-item .icon {
+            float: left;
+            margin-right: 35px;
+            color: #2ecc71;
+        }
+        
+        .mission-wrapper .featured-item .desc {
+            overflow: hidden;
+        }
+    </style>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+    <!-- Top bar -->
+    <div class="top-bar light-blue">
+        <div class="container">
+            <div class="row">
+                <!-- Social Icon -->
+                <div class="col-md-6">
+                    <!-- Social Icon -->
+                    <ul class="list-inline social-top tt-animate btt">
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                        <li><a href="#"><i class="fa fa-rss"></i></a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-6 text-right">
+                    <ul class="topbar-cta no-margin">
+                        <li class="mr-20">
+                            <a><i class="material-icons mr-10">&#xE0B9;</i>sac@drogariasvelanes.com.br</a>
+                        </li>
+                        <li>
+                            <a><i class="material-icons mr-10">&#xE0CD;</i> 73.3214-8500 | 73.3234-5200</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </div>
+    <!-- /.top-bar -->
+
+
+    <!--header start-->
+    <header id="header" class="tt-nav nav-border-bottom">
+
+        <div class="header-sticky light-header ">
+
+            <div class="container">
+
+                <div class="search-wrapper">
+                    <div class="search-trigger pull-right">
+                        <div class='search-btn'></div>
+                        <i class="material-icons">&#xE8B6;</i>
+                    </div>
+
+                    <!-- Modal Search Form -->
+                    <i class="search-close material-icons">&#xE5CD;</i>
+                    <div class="search-form-wrapper">
+                        <form action="#" class="white-form">
+                            <div class="input-field">
+                                <input type="text" name="search" id="search">
+                                <label for="search" class="">Pesquisar...</label>
+                            </div>
+                            <button class="btn orange search-button waves-effect waves-light" type="submit"><i class="material-icons">&#xE8B6;</i></button>
+
+                        </form>
+                    </div>
+                </div>
+                <!-- /.search-wrapper -->
+                {% include navigation.html %}
+                
+            </div>
+        </div>
+
+    </header>
+    <!--header end-->
+
+
+    <!-- start revolution slider 5.0 -->
+    <section class="rev_slider_wrapper">
+        <div class="rev_slider materialize-slider">
+            <ul>
+
+                <!-- slide 1 start -->
+                <li data-transition="parallaxvertical" data-slotamount="default" data-easein="default" data-easeout="default" data-masterspeed="default" data-thumb="{{ site.baseurl }}/assets/img/banner/banner01.png" data-rotate="0" data-fstransition="fade" data-fsmasterspeed="1500" data-fsslotamount="7"
+                    data-saveperformance="off" data-title="" data-description="">
+                    <!-- MAIN IMAGE -->
+                    <img src="{{ site.baseurl }}/assets/img/banner/banner01.png" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
+                    <!-- LAYERS -->
+
+                    <!-- LAYER NR. 1 -->
+                    <div class="tp-caption tp-shape tp-shapewrapper tp-resizeme rs-parallaxlevel-0" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']" data-width="full"
+                        data-height="full" data-whitespace="normal" data-transform_idle="o:1;" data-transform_in="opacity:0;s:1500;e:Power3.easeInOut;" data-transform_out="opacity:0;s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;" data-start="1000" data-basealign="slide"
+                        data-responsive_offset="on" style="z-index: 5;background-color:rgba(0, 0, 0, 0);border-color:rgba(0, 0, 0, 0);">
+                    </div>
+
+                    <!-- LAYER NR. 2 -->
+                    <div class="tp-caption Newspaper-Title tp-resizeme text-capitalize rs-parallaxlevel-0" data-x="['left','left','left','left']" data-hoffset="['50','50','50','30']" data-y="['top','top','top','top']" data-voffset="['165','135','105','130']" data-fontsize="['50','50','50','30']"
+                        data-lineheight="['55','55','55','35']" data-width="['600','600','600','420']" data-height="none" data-whitespace="normal" data-transform_idle="o:1;" data-transform_in="y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;"
+                        data-transform_out="auto:auto;s:1000;e:Power3.easeInOut;" data-mask_in="x:0px;y:0px;s:inherit;e:inherit;" data-mask_out="x:0;y:0;s:inherit;e:inherit;" data-start="1000" data-splitin="none" data-splitout="none" data-responsive_offset="on"
+                        style="z-index: 6; min-width: 600px; max-width: 600px; white-space: normal;"><img src="{{ site.baseurl }}/assets/img/banner/banner01-leg.png" alt="" />
+                    </div>
+                </li>
+                <!-- slide 1 end -->
+
+                <!-- slide 2 start -->
+                <li data-transition="parallaxvertical" data-slotamount="default" data-easein="default" data-easeout="default" data-masterspeed="default" data-thumb="{{ site.baseurl }}/assets/img/banner/banner02.png" data-rotate="0" data-saveperformance="off" data-title="" data-description="">
+                    <!-- MAIN IMAGE -->
+                    <img src="{{ site.baseurl }}/assets/img/banner/banner02.png" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
+                    <!-- LAYERS -->
+
+                    <!-- LAYER NR. 1 -->
+                    <div class="tp-caption tp-shape tp-shapewrapper   tp-resizeme rs-parallaxlevel-0" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']" data-width="full"
+                        data-height="full" data-whitespace="normal" data-transform_idle="o:1;" data-transform_in="opacity:0;s:1500;e:Power3.easeInOut;" data-transform_out="opacity:0;s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;" data-start="1000" data-basealign="slide"
+                        data-responsive_offset="on" style="z-index: 5;background-color:rgba(0, 0, 0, 0);border-color:rgba(0, 0, 0, 0);">
+                    </div>
+
+                    <!-- LAYER NR. 2 -->
+                    <div class="tp-caption Newspaper-Title   tp-resizeme rs-parallaxlevel-0" data-x="['left','left','left','left']" data-hoffset="['50','50','50','30']" data-y="['top','top','top','top']" data-voffset="['100','135','105','130']" data-fontsize="['50','50','50','30']"
+                        data-lineheight="['55','55','55','35']" data-width="['600','600','600','420']" data-height="none" data-whitespace="normal" data-transform_idle="o:1;" data-transform_in="y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;"
+                        data-transform_out="auto:auto;s:1000;e:Power3.easeInOut;" data-mask_in="x:0px;y:0px;s:inherit;e:inherit;" data-mask_out="x:0;y:0;s:inherit;e:inherit;" data-start="1000" data-splitin="none" data-splitout="none" data-responsive_offset="on"
+                        style="z-index: 6; min-width: 600px; max-width: 600px; white-space: normal;"><img src="{{ site.baseurl }}/assets/img/banner/ativo1.png" alt="" />
+                    </div>
+                </li>
+                <!-- slide 2 end -->
+
+                <!-- slide 3 start -->
+                <li data-transition="parallaxvertical" data-slotamount="default" data-easein="default" data-easeout="default" data-masterspeed="default" data-thumb="{{ site.baseurl }}/assets/img/banner/ativo.png" data-rotate="0" data-saveperformance="off" data-title="" data-description="">
+                    <!-- MAIN IMAGE -->
+                    <img src="{{ site.baseurl }}/assets/img/banner/ativo2.png" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
+                    <!-- LAYERS -->
+
+                    <!-- LAYER NR. 1 -->
+                    <div class="tp-caption tp-shape tp-shapewrapper   tp-resizeme rs-parallaxlevel-0" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']" data-width="full"
+                        data-height="full" data-whitespace="normal" data-transform_idle="o:1;" data-transform_in="opacity:0;s:1500;e:Power3.easeInOut;" data-transform_out="opacity:0;s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;" data-start="1000" data-basealign="slide"
+                        data-responsive_offset="on" style="z-index: 5;background-color:rgba(0, 0, 0, 0);border-color:rgba(0, 0, 0, 0);">
+                    </div>
+
+                    <!-- LAYER NR. 2 -->
+                    <div class="tp-caption Newspaper-Title   tp-resizeme rs-parallaxlevel-0" data-x="['left','left','left','left']" data-hoffset="['50','50','50','30']" data-y="['top','top','top','top']" data-voffset="['100','135','105','130']" data-fontsize="['50','50','50','30']"
+                        data-lineheight="['55','55','55','35']" data-width="['1200','1200','1200','420']" data-height="none" data-whitespace="normal" data-transform_idle="o:1;" data-transform_in="y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;"
+                        data-transform_out="auto:auto;s:1000;e:Power3.easeInOut;" data-mask_in="x:0px;y:0px;s:inherit;e:inherit;" data-mask_out="x:0;y:0;s:inherit;e:inherit;" data-start="1000" data-splitin="none" data-splitout="none" data-responsive_offset="on"
+                        style="z-index: 6; min-width: 1000px; max-width: 1200px; white-space: normal;"><img src="{{ site.baseurl }}/assets/img/banner/ativo4.png" alt="" />
+                    </div>
+                </li>
+                <!-- slide 3 end -->
+
+
+            </ul>
+        </div>
+        <!-- end revolution slider -->
+    </section>
+    <!-- end of slider wrapper -->
+
+    <section class="full-width promo-box cta-bg ptb-50">
+        <div class="container">
+            <div class="col-md-12">
+                <div class="promo-info">
+                    <!--<span class="white-text text-uppercase">Quisque non erat mi. Etiam congue et augue sed tempus.? </span>-->
+                    <h2 class="white-text text-bold text-uppercase no-margin">Receba Nossas Novidades No Seu Email</h2>
+                </div>
+                <div class="promo-btn">
+                    <a href="#" class="btn orange waves-effect waves-white">Clique Aqui</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding pat-bg">
+        <div class="container">
+            <div class="text-center mb-50">
+                <!--<h2 class="section-title text-uppercase"></h2>-->
+                <!-- Ofertas -->
+                <div>
+                    <img src="{{ site.baseurl }}/assets/img/oferta-velanes.png" width="300px" alt="">
+                </div>
+            </div>
+
+
+            <div class="portfolio-container text-center">
+
+                <div class="portfolio col-3 mtb-50 gutter">
+                    <!-- remove "gutter" class for no spacing -->
+
+                    <!-- oferta -->
+                    <div class="portfolio-item">
+                        <div class="portfolio-wrapper">
+
+                            <div class="thumb">
+                                <div class="bg-overlay"></div>
+                                <img src="{{ site.baseurl }}/assets/img/ofertas/oferta1.png" alt="">
+
+                                <div class="portfolio-intro">
+                                    <div class="action-btn">
+                                        <a href="#"> <i class="fa fa-link"></i> </a>
+                                    </div>
+                                    <h2><a href="#">Oferta Velanes #1</a></h2>
+                                </div>
+                            </div>
+                            <!-- thumb -->
+
+                        </div>
+                        <!-- /.portfolio-wrapper -->
+                    </div>
+                    <!-- /.portfolio-item -->
+                    <!-- oferta -->
+                    <div class="portfolio-item">
+                        <div class="portfolio-wrapper">
+
+                            <div class="thumb">
+                                <div class="bg-overlay"></div>
+                                <img src="{{ site.baseurl }}/assets/img/ofertas/oferta2.png" alt="">
+
+                                <div class="portfolio-intro">
+                                    <div class="action-btn">
+                                        <a href="#"> <i class="fa fa-link"></i> </a>
+                                    </div>
+                                    <h2><a href="#">Oferta Velanes #2</a></h2>
+                                </div>
+                            </div>
+                            <!-- thumb -->
+
+                        </div>
+                        <!-- /.portfolio-wrapper -->
+                    </div>
+                    <!-- /.portfolio-item -->
+                    <!-- oferta -->
+                    <div class="portfolio-item">
+                        <div class="portfolio-wrapper">
+
+                            <div class="thumb">
+                                <div class="bg-overlay"></div>
+                                <img src="{{ site.baseurl }}/assets/img/ofertas/oferta2.png" alt="">
+
+                                <div class="portfolio-intro">
+                                    <div class="action-btn">
+                                        <a href="#"> <i class="fa fa-link"></i> </a>
+                                    </div>
+                                    <h2><a href="#">Oferta Velanes #3</a></h2>
+                                </div>
+                            </div>
+                            <!-- thumb -->
+
+                        </div>
+                        <!-- /.portfolio-wrapper -->
+                    </div>
+                    <!-- /.portfolio-item -->
+
+                </div>
+                <!-- /.portfolio -->
+
+            </div>
+            <!-- portfolio-container -->
+        </div>
+    </section>
+
+    <section id="#service" class="section-padding">
+        <div class="container">
+            <div class="text-center mb-50">
+                <h2 class="section-title text-uppercase">Serviços</h2>
+                <p class="section-sub">A Velanes está sempre a sua disposição, dando assistência a sua saúde com os melhores serviços e produtos. Venha conferir!</p>
+            </div>
+
+
+            <div class="portfolio-container text-center">
+
+                <div class="portfolio col-3 mtb-50 gutter">
+                    <!-- remove "gutter" class for no spacing -->
+
+                    <!-- Serviço -->
+                    <div class="portfolio-item">
+
+                        <div class="portfolio-wrapper">
+                            <div class="thumb">
+                                <div class="bg-overlay"></div>
+
+                                <div class="portfolio-slider">
+                                    <ul class="slides">
+                                        <li>
+                                            <a href="{{ site.baseurl }}/assets/img/services/cart1-1.png" title="">
+                                                <img src="{{ site.baseurl }}/assets/img/services/cart1.png" alt="">
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="portfolio-intro">
+                                    <div class="action-btn">
+                                        <a href="#"> <i class="fa fa-plus"></i> </a>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- thumb -->
+
+                        </div>
+                        <!-- /.portfolio-wrapper -->
+                    </div>
+                    <!-- /.portfolio-item -->
+
+                    <!-- Serviço -->
+                    <div class="portfolio-item">
+
+                        <div class="portfolio-wrapper">
+                            <div class="thumb">
+                                <div class="bg-overlay"></div>
+
+                                <div class="portfolio-slider">
+                                    <ul class="slides">
+                                        <li>
+                                            <a href="{{ site.baseurl }}/assets/img/services/cart2-1.png" title="">
+                                                <img src="{{ site.baseurl }}/assets/img/services/cart2.png" alt="">
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="portfolio-intro">
+                                    <div class="action-btn">
+                                        <a href="#"> <i class="fa fa-plus"></i> </a>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- thumb -->
+
+                        </div>
+                        <!-- /.portfolio-wrapper -->
+                    </div>
+                    <!-- /.portfolio-item -->
+
+                    <!-- Serviço -->
+                    <div class="portfolio-item">
+
+                        <div class="portfolio-wrapper">
+                            <div class="thumb">
+                                <div class="bg-overlay"></div>
+
+                                <div class="portfolio-slider">
+                                    <ul class="slides">
+                                        <li>
+                                            <a href="{{ site.baseurl }}/assets/img/services/cart3-1.png" title="">
+                                                <img src="{{ site.baseurl }}/assets/img/services/cart3.png" alt="">
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="portfolio-intro">
+                                    <div class="action-btn">
+                                        <a href="#"> <i class="fa fa-plus"></i> </a>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- thumb -->
+
+                        </div>
+                        <!-- /.portfolio-wrapper -->
+                    </div>
+                    <!-- /.portfolio-item -->
+
+                    <!-- Serviço -->
+                    <div class="portfolio-item">
+
+                        <div class="portfolio-wrapper">
+
+                            <div class="thumb">
+                                <div class="bg-overlay"></div>
+                                <img src="{{ site.baseurl }}/assets/img/services/cart4.png" alt="">
+
+                                <div class="portfolio-intro">
+                                    <div class="action-btn">
+                                        <a href="#"> <i class="fa fa-plus"></i> </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- thumb -->
+
+                        </div>
+                        <!-- /.portfolio-wrapper -->
+                    </div>
+                    <!-- /.portfolio-item -->
+
+                    <!-- Serviço -->
+                    <div class="portfolio-item">
+
+                        <div class="portfolio-wrapper">
+
+                            <div class="thumb">
+                                <div class="bg-overlay"></div>
+                                <img src="{{ site.baseurl }}/assets/img/services/cart5.png" alt="">
+
+                                <div class="portfolio-intro">
+                                    <div class="action-btn">
+                                        <a href="#"> <i class="fa fa-plus"></i> </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- thumb -->
+
+                        </div>
+                        <!-- /.portfolio-wrapper -->
+                    </div>
+                    <!-- /.portfolio-item -->
+
+                    <!-- Serviço -->
+                    <div class="portfolio-item">
+
+                        <div class="portfolio-wrapper">
+
+                            <div class="thumb">
+                                <div class="bg-overlay"></div>
+                                <img src="{{ site.baseurl }}/assets/img/services/cart6.png" alt="">
+
+                                <div class="portfolio-intro">
+                                    <div class="action-btn">
+                                        <a href="#"> <i class="fa fa-plus"></i> </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- thumb -->
+
+                        </div>
+                        <!-- /.portfolio-wrapper -->
+                    </div>
+                    <!-- /.portfolio-item -->
+
+                </div>
+                <!-- /.portfolio -->
+
+            </div>
+            <!-- portfolio-container -->
+        </div>
+    </section>
+
+    <section class="full-width promo-box cta2-bg ptb-50">
+        <div class="container">
+            <div class="col-md-12">
+                <a href="#"><img src="{{ site.baseurl }}/assets/img/cta/espaco.png" alt=""></a>
+            </div>
+        </div>
+    </section>
+
+    <section id="news" class="section-padding grid-news-hover gray-bg">
+        <div class="container">
+
+            <div class="text-center mb-80">
+                <h2 class="section-title">Notícias</h2>
+            </div>
+
+
+            <div class="row">
+                <div class="col-md-4">
+                    <article class="post-wrapper">
+
+                        <div class="thumb-wrapper waves-effect waves-block waves-light">
+                            <a href="#"><img src="{{ site.baseurl }}/assets/img/posts/noticia01.png" class="img-responsive" alt=""></a>
+
+                        </div>
+                        <!-- .post-thumb -->
+
+                        <div class="blog-content">
+
+                            <div class="hover-overlay brand-bg"></div>
+
+                            <header class="entry-header-wrapper">
+                                <div class="entry-header">
+                                    <h2 class="entry-title"><a href="#">Corra e Resgate sua saúde.</a></h2>
+
+                                    <div class="entry-meta">
+                                        <ul class="list-inline">
+                                            <li>
+                                                por: <a href="#">Velanes</a>
+                                            </li>
+                                            <li>
+                                                Em: <a href="#">Saúde</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <!-- .entry-meta -->
+                                </div>
+                                <!-- /.entry-header -->
+                            </header>
+                            <!-- /.entry-header-wrapper -->
+
+                            <div class="entry-content">
+                                <p>Você sabe os benefícios que a corrida traz para seu corpo? Emagrecer é o primeiro benefício que todos falam...</p>
+                            </div>
+                            <!-- .entry-content -->
+
+                        </div>
+                        <!-- /.blog-content -->
+
+                    </article>
+                    <!-- /.post-wrapper -->
+                </div>
+                <!-- /.col-md-4 -->
+
+                <div class="col-md-4">
+                    <article class="post-wrapper">
+
+                        <div class="thumb-wrapper waves-effect waves-block waves-light">
+                            <a href="#"><img src="{{ site.baseurl }}/assets/img/posts/noticia02.png" class="img-responsive" alt=""></a>
+
+                        </div>
+                        <!-- .post-thumb -->
+
+                        <div class="blog-content">
+
+                            <div class="hover-overlay brand-bg"></div>
+
+                            <header class="entry-header-wrapper">
+                                <div class="entry-header">
+                                    <h2 class="entry-title"><a href="#">Um prato colorido enche os olhos de apetite e o corpo de nutrientes</a></h2>
+
+                                    <div class="entry-meta">
+                                        <ul class="list-inline">
+                                            <li>
+                                                por: <a href="#">Velanes</a>
+                                            </li>
+                                            <li>
+                                                Em: <a href="#">Alimentação</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <!-- .entry-meta -->
+                                </div>
+                                <!-- /.entry-header -->
+                            </header>
+                            <!-- /.entry-header-wrapper -->
+
+                            <div class="entry-content">
+                                <p>Você sabia que as cores dos alimentos identificam os nutrientes? Comer equilibradamente não é tão difícil...</p>
+                            </div>
+                            <!-- .entry-content -->
+
+                        </div>
+                        <!-- /.blog-content -->
+
+                    </article>
+                    <!-- /.post-wrapper -->
+                </div>
+                <!-- /.col-md-4 -->
+
+                <div class="col-md-4">
+                    <article class="post-wrapper">
+
+                        <div class="thumb-wrapper waves-effect waves-block waves-light">
+                            <a href="#"><img src="{{ site.baseurl }}/assets/img/posts/noticia03.png" class="img-responsive" alt=""></a>
+
+                        </div>
+                        <!-- .post-thumb -->
+
+                        <div class="blog-content">
+
+                            <div class="hover-overlay brand-bg"></div>
+
+                            <header class="entry-header-wrapper">
+                                <div class="entry-header">
+                                    <h2 class="entry-title"><a href="#">A vitamina D é vital na prevenção da osteoporose</a></h2>
+
+                                    <div class="entry-meta">
+                                        <ul class="list-inline">
+                                            <li>
+                                                por: <a href="#">Velanes</a>
+                                            </li>
+                                            <li>
+                                                Em: <a href="#">Alimentação</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <!-- .entry-meta -->
+                                </div>
+                                <!-- /.entry-header -->
+                            </header>
+                            <!-- /.entry-header-wrapper -->
+
+                            <div class="entry-content">
+                                <p>Sim, tomar sol e se alimentar de alguns alimentos com vitamina D pode prevenir a osteoporose e outras doenças.</p>
+                            </div>
+                            <!-- .entry-content -->
+
+                        </div>
+                        <!-- /.blog-content -->
+
+                    </article>
+                    <!-- /.post-wrapper -->
+                </div>
+                <!-- /.col-md-4 -->
+
+            </div>
+            <!-- /.row -->
+
+        </div>
+        <!-- /.container -->
+    </section>
+
+    <section id="contact" class="section-padding contact-form-wrapper">
+
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-8">
+                    <form name="contact-form" id="contactForm" class="clearfix" action="sendemail.php" method="POST">
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="input-field">
+                                    <input type="text" name="name" class="validate" id="name">
+                                    <label for="name">Nome</label>
+                                </div>
+
+                            </div>
+                            <!-- /.col-md-6 -->
+
+                            <div class="col-md-6">
+                                <div class="input-field">
+                                    <label class="sr-only" for="email">Email</label>
+                                    <input id="email" type="email" name="email" class="validate">
+                                    <label for="email" data-error="wrong" data-success="right">Email</label>
+                                </div>
+                            </div>
+                            <!-- /.col-md-6 -->
+                        </div>
+                        <!-- /.row -->
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="input-field">
+                                    <input id="phone" type="tel" name="phone" class="validate">
+                                    <label for="phone">Telefone</label>
+                                </div>
+                            </div>
+                            <!-- /.col-md-6 -->
+
+                            <div class="col-md-6">
+                                <div class="input-field">
+                                    <input id="website" type="text" name="website" class="validate">
+                                    <label for="website">Whatsapp</label>
+                                </div>
+                            </div>
+                            <!-- /.col-md-6 -->
+                        </div>
+                        <!-- /.row -->
+
+                        <div class="input-field">
+                            <textarea name="message" id="message" class="materialize-textarea"></textarea>
+                            <label for="message">Mensagem</label>
+                        </div>
+
+                        <button type="submit" name="submit" class="waves-effect waves-light btn orange right mt-30">Enviar</button>
+                    </form>
+                </div>
+                <!-- /.col-md-8 -->
+
+                <div class="col-md-4 contact-info">
+
+                    <address>
+                      <i class="material-icons brand-color">&#xE61C;</i>
+                      <div class="phone">
+                        <p>Itabuna: (73) 3214-8500<br>
+                        Ilhéus: (73) 3234-5200</p>
+                      </div>
+
+                      <i class="material-icons brand-color">&#xE0B7;</i>
+                      <div class="mail">
+                        <p><a href="mailto:#">sac@drogariasvelanes.com.br</a><br>
+                      </div>
+                    </address>
+                </div>
+                <!-- /.col-md-4 -->
+            </div>
+            <!-- /.row -->
+        </div>
+    </section>
+
+    <!--footer 1 start -->
+    <footer class="footer footer-one">
+        <div class="primary-footer brand-bg">
+            <div class="container">
+                <a href="#top" class="page-scroll btn-floating btn-large orange back-top waves-effect waves-light tt-animate btt" data-section="#top">
+                    <i class="material-icons">&#xE316;</i>
+                </a>
+
+                <div class="row">
+                    <div class="col-md-3 widget clearfix">
+                        <h2 class="white-text">Velanes</h2>
+                        <p>Sempre investindo e inovando para oferecer o melhor aos seus clientes e colaboradores.</p>
+
+                        <ul class="social-link tt-animate ltr">
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                            <li><a href="#"><i class="fa fa-rss"></i></a></li>
+                        </ul>
+                    </div>
+                    <!-- /.col-md-3 -->
+
+                    <div class="col-md-3 widget">
+                        <h2 class="white-text"> </h2>
+
+                        <ul class="footer-list">
+                            <li><a href="#">Sobre</a></li>
+                            <li><a href="#">Serviços</a></li>
+                            <li><a href="#">Notícias</a></li>
+                            <li><a href="#">Trabalhe Conosco</a></li>
+                            <li><a href="#">Contato</a></li>
+                        </ul>
+                    </div>
+                    <!-- /.col-md-3 -->
+
+                    <div class="col-md-3 widget">
+                        <h2 class="white-text">Facebook Feed</h2>
+
+                        <div id="twitterfeed" class="twitter-widget-wrapper">
+                            <!-- html code injected via javascript -->
+                        </div>
+                    </div>
+                    <!-- /.col-md-3 -->
+
+
+                    <div class="col-md-3 widget">
+                        <h2 class="white-text">Instagram Feed</h2>
+
+                    </div>
+                    <!-- /.col-md-3 -->
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- /.container -->
+        </div>
+        <!-- /.primary-footer -->
+
+        <div class="secondary-footer brand-bg darken-2">
+            <div class="container">
+                <span class="copy-text">&copy; {{ site.time | date: "%Y" }} <a href="{{ site.baseurl }}">Drogarias Velanes</a> &nbsp;  | &nbsp;  Todos os direitos reservados &nbsp;  | &nbsp;  Desenvolvido por <a href="#">Art3 Propaganda</a></span>
+            </div>
+            <!-- /.container -->
+        </div>
+        <!-- /.secondary-footer -->
+    </footer>
+    <!--footer 1 end-->
+
+
+    <!-- Preloader 
+    <div id="preloader">
+        <div class="preloader-position">
+            <img src="{{ site.baseurl }}/assets/img/logo.png" alt="logo">
+            <div class="progress">
+                <div class="indeterminate"></div>
+            </div>
+        </div>
+    </div>-->
+    <!-- End Preloader -->
+
+
+    <!-- jQuery -->
+    <script src="{{ site.baseurl }}/assets/js/jquery-2.1.3.min.js"></script>
+    <script src="{{ site.baseurl }}/assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="{{ site.baseurl }}/assets/materialize/js/materialize.min.js"></script>
+    <script src="{{ site.baseurl }}/assets/js/smoothscroll.min.js"></script>
+    <script src="{{ site.baseurl }}/assets/js/jquery.easing.min.js"></script>
+    <script src="{{ site.baseurl }}/assets/js/menuzord.js"></script>
+    <script src="{{ site.baseurl }}/assets/js/bootstrap-tabcollapse.min.js"></script>
+    <script src="{{ site.baseurl }}/assets/js/imagesloaded.js"></script>
+    <script src="{{ site.baseurl }}/assets/js/jquery.stellar.min.js"></script>
+    <script src="{{ site.baseurl }}/assets/js/masonry.pkgd.min.js"></script>
+    <script src="{{ site.baseurl }}/assets/owl.carousel/owl.carousel.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+    <script src="{{ site.baseurl }}/assets/js/scripts.js"></script>
+    <script src="{{ site.baseurl }}/assets/flexSlider/jquery.flexslider-min.js"></script>
+    <script src="{{ site.baseurl }}/assets/magnific-popup/jquery.magnific-popup.min.js"></script>
+    <!-- RS5.0 Core JS Files -->
+    <script src="{{ site.baseurl }}/assets/revolution/js/jquery.themepunch.tools.min.js"></script>
+    <script src="{{ site.baseurl }}/assets/revolution/js/jquery.themepunch.revolution.min.js"></script>
+
+    <!-- RS5.0 Init  -->
+    <script type="text/javascript">
+        jQuery(document).ready(function() {
+            jQuery(".materialize-slider").revolution({
+                sliderType: "standard",
+                sliderLayout: "fullwidth",
+                delay: 9000,
+                navigation: {
+                    keyboardNavigation: "on",
+                    keyboard_direction: "horizontal",
+                    mouseScrollNavigation: "off",
+                    onHoverStop: "off",
+                    touch: {
+                        touchenabled: "on",
+                        swipe_threshold: 75,
+                        swipe_min_touches: 1,
+                        swipe_direction: "horizontal",
+                        drag_block_vertical: false
+                    },
+                    arrows: {
+                        style: "gyges",
+                        enable: true,
+                        hide_onmobile: false,
+                        hide_over: 778,
+                        hide_onleave: false,
+                        tmp: '',
+                        left: {
+                            h_align: "right",
+                            v_align: "bottom",
+                            h_offset: 40,
+                            v_offset: 0
+                        },
+                        right: {
+                            h_align: "right",
+                            v_align: "bottom",
+                            h_offset: 0,
+                            v_offset: 0
+                        }
+                    },
+                    tabs: {
+                        style: "erinyen",
+                        enable: true,
+                        width: 250,
+                        height: 100,
+                        min_width: 250,
+                        wrapper_padding: 0,
+                        wrapper_color: "transparent",
+                        wrapper_opacity: "0",
+                        tmp: '<div class="tp-tab-title">{{title}}</div><div class="tp-tab-desc">{{description}}</div>',
+                        visibleAmount: 3,
+                        hide_onmobile: true,
+                        hide_under: 778,
+                        hide_onleave: false,
+                        hide_delay: 200,
+                        direction: "vertical",
+                        span: false,
+                        position: "inner",
+                        space: 10,
+                        h_align: "right",
+                        v_align: "center",
+                        h_offset: 30,
+                        v_offset: 0
+                    }
+                },
+                viewPort: {
+                    enable: true,
+                    outof: "pause",
+                    visible_area: "80%"
+                },
+                responsiveLevels: [1240, 1024, 778, 480],
+                gridwidth: [1240, 1024, 778, 480],
+                gridheight: [500, 450, 400, 350],
+                lazyType: "none",
+                parallax: {
+                    type: "scroll",
+                    origo: "enterpoint",
+                    speed: 400,
+                    levels: [5, 10, 15, 20, 25, 30, 35, 40, 45, 50],
+                },
+                disableProgressBar: "on",
+                parallax: {
+                    type: "mouse",
+                    origo: "slidercenter",
+                    speed: 2000,
+                    levels: [2, 3, 4, 5, 6, 7, 12, 16, 10, 50],
+                }
+
+
+            });
+        });
+    </script>
+
+    <!-- SLIDER REVOLUTION 5.0 EXTENSIONS  (Load Extensions only on Local File Systems! The following part can be removed on Server for On Demand Loading) -->
+
+    <script type="text/javascript" src="{{ site.baseurl }}/assets/revolution/js/extensions/revolution.extension.video.min.js"></script>
+    <script type="text/javascript" src="{{ site.baseurl }}/assets/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
+    <script type="text/javascript" src="{{ site.baseurl }}/assets/revolution/js/extensions/revolution.extension.actions.min.js"></script>
+    <script type="text/javascript" src="{{ site.baseurl }}/assets/revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
+    <script type="text/javascript" src="{{ site.baseurl }}/assets/revolution/js/extensions/revolution.extension.kenburn.min.js"></script>
+    <script type="text/javascript" src="{{ site.baseurl }}/assets/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
+    <script type="text/javascript" src="{{ site.baseurl }}/assets/revolution/js/extensions/revolution.extension.migration.min.js"></script>
+    <script type="text/javascript" src="{{ site.baseurl }}/assets/revolution/js/extensions/revolution.extension.parallax.min.js"></script>
+
+
+</body>
+
 </html>
