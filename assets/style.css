@@ -689,12 +689,12 @@ thead {
     background-color: #03a9f4 !important; /*theme primary background color*/
 }
 .cta-bg {
-    background-image: url('assets/img/cta/faixa-de-alerta.png') !important;
+    background-image: url('img/cta/faixa-de-alerta.png') !important;
     /*background-repeat: no-repeat;
     background-size: cover;*/
 }
 .cta2-bg {
-    background-image: url('assets/img/cta/espaco-digital.png') !important;
+    background-image: url('img/cta/espaco-digital.png') !important;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -704,7 +704,7 @@ thead {
     margin-left: 25%;
 }
 .pat-bg {
-    background-image: url('assets/img/cta/pattern.png') !important;
+    background-image: url('img/cta/pattern.png') !important;
     /*background-repeat: no-repeat;
     background-size: cover;*/
 }
