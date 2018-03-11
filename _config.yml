@@ -88,3 +88,26 @@ _options:
   author_image:
     width: 400
     height: 400
+
+#collections:
+#  category:
+#    output: true
+#
+#defaults:
+#  -
+#    scope:
+#      path: ""
+#      type: category
+#    values:
+#      layout: "category"
+
+# HTML Compression
+# - http://jch.penibelst.de/
+compress_html:
+  clippings               : all
+  endings                 : all
+  comments                : ["<!-- ", " -->"]
+  blanklines              : true
+  profile                 : false
+  ignore:
+  envs                    : [local]
