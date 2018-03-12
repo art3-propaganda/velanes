@@ -1,8 +1,5 @@
 ---
-date: 2017-01-06
 title: Um prato colorido enche os olhos de apetite e o corpo de nutrientes
-categories:
-  - Cakes
 featured_image: https://raw.githubusercontent.com/art3-propaganda/d-v-lan/master/assets/img/posts/noticia02.png
  
 ---

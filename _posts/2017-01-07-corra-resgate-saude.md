@@ -1,9 +1,5 @@
 ---
-date: 2017-01-07
 title: Corra e Resgate sua saúde
-categories:
-  - Cupcakes
-  - Cakes
 featured_image: https://raw.githubusercontent.com/art3-propaganda/d-v-lan/master/assets/img/posts/noticia01.png
 
 ---

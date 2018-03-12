@@ -1,8 +1,5 @@
 ---
-date: 2017-01-05
 title: A vitamina D é vital na prevenção da osteoporose
-categories:
-  - Cookies
 featured_image: https://raw.githubusercontent.com/art3-propaganda/d-v-lan/master/assets/img/posts/noticia03.png
  
 ---
