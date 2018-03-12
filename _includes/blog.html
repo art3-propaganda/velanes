@@ -8,7 +8,7 @@
 
             <div class="row">
 
-            {% for post in paginator.posts %}
+            {% for post in paginator.posts limit:3 %}
                 <div class="col-md-4">
                     <article class="post-wrapper">
                         
