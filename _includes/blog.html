@@ -1,0 +1,66 @@
+<section id="news" class="section-padding grid-news-hover gray-bg">
+        <div class="container">
+
+            <div class="text-center mb-80">
+                <h2 class="section-title">Notícias</h2>
+            </div>
+
+
+            <div class="row">
+
+            {% for post in paginator.posts %}
+                <div class="col-md-4">
+                    <article class="post-wrapper">
+                        
+                        <div class="thumb-wrapper waves-effect waves-block waves-light">
+                            <a href="{{ post.url }}"><img src="{{ post.featured_image }}" class="img-responsive" alt="{{ post.title }}"></a>
+
+                        </div>
+                        <!-- .post-thumb -->
+
+                        <div class="blog-content">
+
+                            <div class="hover-overlay brand-bg"></div>
+
+                            <header class="entry-header-wrapper">
+                                <div class="entry-header">
+                                    <h2 class="entry-title"><a href="{{ post.url }}">{{ post.title }}</a></h2>
+
+                                    <div class="entry-meta">
+                                        <ul class="list-inline">
+                                            <li>
+                                                por: <a href="#">Velanes</a>
+                                            </li>
+                                            <li>
+                                                Em: <a href="#">Saúde</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <!-- .entry-meta -->
+                                </div>
+                                <!-- /.entry-header -->
+                            </header>
+                            <!-- /.entry-header-wrapper -->
+
+                            <div class="entry-content">
+
+                                {{ post.excerpt }}
+
+                            </div>
+                            <!-- .entry-content -->
+
+                        </div>
+                        <!-- /.blog-content -->
+
+                    </article>
+                    <!-- /.post-wrapper -->
+                </div>
+                <!-- /.col-md-4 -->
+            {% endfor %}
+
+            </div>
+            <!-- /.row -->
+
+        </div>
+        <!-- /.container -->
+    </section>
