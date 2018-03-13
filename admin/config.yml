@@ -1,20 +1,3 @@
-#backend:
-#  name: git-gateway
-#  branch: master # Branch to update (optional; defaults to master)
-
-#media_folder: "{{ site.baseurl }}/assets/posts"
-
-#collections:
-#  - name: "post" # Used in routes, e.g. /admin/collections/blog
-#    label: "Post" # Used in the UI
-#    folder: "_posts" # The path to the folder where the documents are stored
-#    create: true # Allow users to create new documents in this collection
-#    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template i.e. YYYY-MM-DD-title.md
-#    fields: # The fields for each document, usually in front matter
-#      - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
-#      - {label: "Title", name: "title", widget: "string"}
-#      - {label: "Body", name: "body", widget: "markdown"}
-
 backend:
   name: git-gateway
   branch: master # Branch to update (optional; defaults to master)
@@ -171,4 +154,4 @@ collections: # A list of collections the CMS should be able to edit
                   - {label: "File", name: "file", widget: "file"}
                   - {label: "Select", name: "select", widget: "select", options: ["a", "b", "c"]}
                   - {label: "Hidden", name: "hidden", widget: "hidden", default: "hidden"}
-                  
+
