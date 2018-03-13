@@ -27,7 +27,7 @@ timezone: America/Bahia
 
 paginate: 10
 paginate_path: "/:num/"
-#permalink: pretty
+permalink: pretty
 
 defaults:
   -
@@ -88,18 +88,6 @@ _options:
   author_image:
     width: 400
     height: 400
-
-#collections:
-#  category:
-#    output: true
-#
-#defaults:
-#  -
-#    scope:
-#      path: ""
-#      type: category
-#    values:
-#      layout: "category"
 
 # HTML Compression
 # - http://jch.penibelst.de/
