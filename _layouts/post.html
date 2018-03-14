@@ -1,79 +1,103 @@
 ---
 layout: default
 ---
-<article class="post">
-	{% include post-heading.html post=page post_page=true %}
-	<div class="image">
-		<img src="{{ page.featured_image }}" alt="{{ page.title }}">
-	</div>
+<!-- blog section start -->
+<section class="blog-section section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+              <div class="posts-content single-post">
 
-	<div class="recipe-body">
-		{{ content }}
-	</div>
+                <article class="post-wrapper">
 
-	<ul id="recipe" class="recipe-overview">
-		<li title="Servings">{% include recipe-icon.html icon="quantity" %}<span>{{ page.recipe.servings }}</span></li>
-		<li title="Prep Time">{% include recipe-icon.html icon="time" %}<span>{{ page.recipe.prep }}</span></li>
-		<li title="Cook Time">{% include recipe-icon.html icon="cook" %}<span>{{ page.recipe.cook }}</span></li>
-	</ul>
+                  <header class="entry-header-wrapper clearfix">
 
-	<div class="recipe-contents">
-		<div class="ingredients">
-			<h2>Ingredients</h2>
-			{{ page.recipe.ingredients_markdown | markdownify }}
-		</div>
+                    
+                    <div class="entry-header">
+                      <h2 class="entry-title">{{ page.title }}</h2>
 
-		<div class="directions">
-			<h2>Directions</h2>
-			{{ page.recipe.directions_markdown | markdownify }}
-		</div>
-	</div>
+                      <div class="entry-meta">
+                          <ul class="list-inline">
+                              <li>{% include post-heading.html post=page post_page=true %}
+                              </li>
+                          </ul>
+                      </div><!-- .entry-meta -->
+                    </div>
 
-	<div class="sharing">
-		{% assign share_url = page.url | absolute_url | cgi_escape %}
-		<a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u={{ share_url }}">{% include social-icon.html icon="Facebook" %}</a>
-		<a class="twitter" href="https://twitter.com/intent/tweet?url={{ share_url }}&amp;text=I'm%20going%20to%20this%20event!">{% include social-icon.html icon="Twitter" %}</a>
-		<a class="google-plus" href="https://plus.google.com/share?url={{ share_url }}">{% include social-icon.html icon="Google Plus" %}</a>
-		<a class="pinterest" href="//pinterest.com/pin/create/link/?url={{ share_url }}&amp;description={{ page.description }}">{% include social-icon.html icon="Pinterest" %}</a>
-		<a class="email" href="mailto:?subject=I've%20found%20a%20great%20recipe&amp;body=Check%20it%20out%20-%20{{ share_url }}">{% include social-icon.html icon="Email" %}</a>
-	</div>
+                  </header><!-- /.entry-header-wrapper -->
 
-	<div class="cta">
-		<h2>More delicious recipes</h2>
-		<p>This is one of the many fantastic recipes available on this blog</p>
-		<div class="button"><a href="/recipes">Check out more recipes</a></div>
-	</div>
-	{% if site.disqus_shortname and page.comments %}
-		<div id="disqus_thread"></div>
-		<script>
-			var disqus_shortname = '{{ site.disqus_shortname }}';
-			var disqus_config = function () {
-				this.page.url = "{{ page.url | prepend: site.url }}";
-				this.page.identifier = "{{ page.id }}";
-			};
-			(function() {  // DON'T EDIT BELOW THIS LINE
-				var d = document, s = d.createElement('script');
-				s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-				s.setAttribute('data-timestamp', +new Date());
-				(d.head || d.body).appendChild(s);
-			})();
-		</script>
-		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
-	{% endif %}
-</article>
+                  <div class="thumb-wrapper">
+                    <img class="img-responsive" src="{{ page.featured_image }}" alt="{{ page.title }}">
+                  </div><!-- .post-thumb -->
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script type="text/javascript" src="/js/jquery.imgPin.min.js"></script>
-<script>
-	$(function() {
-		$('.post img').imgPin();
 
-		$('a[href*=\\#]').on('click', function(event){
-			var el = $(this.hash);
-			if (el.length > 0) {
-				event.preventDefault();
-				$('html,body').animate({scrollTop:$(this.hash).offset().top - 50}, 500);
-			}
-		});
-	});
-</script>
+                  <div class="entry-content">
+                    {{ content }}
+                  </div><!-- .entry-content -->
+
+
+                  <footer class="entry-footer">
+                    <!-- <div class="post-tags">
+                      <span class="tags-links">
+                        <i class="fa fa-tags"></i><a href="#">Technology,</a> <a href="#" rel="tag">material design</a>
+                      </span>
+                    </div> .post-tags -->
+
+                    <ul class="list-inline right share-post">
+                        {% assign share_url = page.url | absolute_url | cgi_escape %}
+                        <li><a href="https://www.facebook.com/sharer/sharer.php?u={{ share_url }}"><i class="fa fa-facebook"></i> <span>Compartilhar</span></a>
+                        </li>
+                        <li><a href="https://twitter.com/intent/tweet?url={{ share_url }}&amp;text=I'm%20going%20to%20this%20event!""><i class="fa fa-twitter"></i> <span>Tweet</span></a>
+                        </li>
+                    </ul>
+                  </footer>
+
+                </article><!-- /.post-wrapper -->
+
+                <nav class="single-post-navigation" role="navigation">
+                  <div class="row">
+                    <!-- Previous Post -->
+                    <div class="col-xs-6">
+                      <div class="previous-post-link">
+                        <a class="waves-effect waves-light" href="{{ page.previous.title }}"><i class="fa fa-long-arrow-left"></i>Anterior</a>
+                      </div>
+                    </div>
+
+                    <!-- Next Post -->
+                    <div class="col-xs-6">
+                      <div class="next-post-link">
+                        <a class="waves-effect waves-light" href="{{ page.next.title }}">Próxima<i class="fa fa-long-arrow-right"></i></a>
+                      </div>
+                    </div>
+                  </div> <!-- .row -->
+                </nav>
+
+                <div class="comments-wrapper">
+                    {% if site.disqus_shortname and page.comments %}
+                      <div id="disqus_thread"></div>
+                      <script>
+                        var disqus_shortname = '{{ site.disqus_shortname }}';
+                        var disqus_config = function () {
+                          this.page.url = "{{ page.url | prepend: site.url }}";
+                          this.page.identifier = "{{ page.id }}";
+                        };
+                        (function() {  // DON'T EDIT BELOW THIS LINE
+                          var d = document, s = d.createElement('script');
+                          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                          s.setAttribute('data-timestamp', +new Date());
+                          (d.head || d.body).appendChild(s);
+                        })();
+                      </script>
+                      <noscript>Por favor, habilite o Javascript <a href="https://disqus.com/?ref_noscript" rel="nofollow">.</a></noscript>
+                    {% endif %}
+                </div><!-- /.comments-wrapper -->
+
+              </div><!-- /.posts-content -->
+            </div><!-- /.col-md-8 -->
+
+            {% include sidebar.html %}            
+
+          </div><!-- /.row -->
+    </div><!-- /.container -->
+</section>
+<!-- blog section end -->
