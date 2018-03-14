@@ -1,6 +1,7 @@
 ---
 title: Corra e Resgate sua saúde
 featured_image: https://raw.githubusercontent.com/art3-propaganda/d-v-lan/master/assets/img/posts/noticia01.png
+categories: blog
 
 ---
 Você sabe os benefícios que a corrida traz para seu corpo? 

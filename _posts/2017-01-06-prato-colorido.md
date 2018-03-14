@@ -1,7 +1,8 @@
 ---
 title: Um prato colorido enche os olhos de apetite e o corpo de nutrientes
 featured_image: https://raw.githubusercontent.com/art3-propaganda/d-v-lan/master/assets/img/posts/noticia02.png
- 
+ categories: blog
+
 ---
 Você sabia que as cores dos alimentos identificam os nutrientes?
 

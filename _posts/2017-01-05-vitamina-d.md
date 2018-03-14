@@ -1,7 +1,8 @@
 ---
 title: A vitamina D é vital na prevenção da osteoporose
 featured_image: https://raw.githubusercontent.com/art3-propaganda/d-v-lan/master/assets/img/posts/noticia03.png
- 
+categories: blog
+
 ---
 Sim, tomar sol e se alimentar de alguns alimentos com vitamina D pode prevenir a osteoporose e outras doenças.
 
