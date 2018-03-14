@@ -5,6 +5,7 @@ categories: blog
 
 ---
 Você sabia que as cores dos alimentos identificam os nutrientes?
+
 Comer equilibradamente não é tão difícil, basta colocar alimentos das mais variadas cores no prato como verde, laranja, vermelho, roxo, branco, marrom e verá que terá todos os nutrientes de que precisa e estará se alimentando bem. Quanto mais colorido melhor. Saiba mais sobre as cores, os nutrientes e suas funções:
 
 Os alimentos de cor laranja são fontes de vitaminas A, C e do complexo B, os alimentos alaranjados deixam a pele e os cabelos mais bonitos e melhoram a visão. Possuem antioxidantes que combatem os radicais livres do nosso organismo e ajudam a fortalecer o sistema imunológico. Então coloque no seu prato: cenoura, laranja, abóbora, caju, damasco, mamão, manga e outros de sua preferência.
