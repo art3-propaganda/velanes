@@ -202,8 +202,8 @@ Version: 1.5
                 target: 'myinstafeed', //The ID of a DOM element you want to add the images to
                 limit: 6,
                 get: 'user',
-                userId: 2963143209,
-                accessToken: '2963143209.1677ed0.6cf28ac3f9c041759202e3e1af8baa46'
+                userId: 2902871725, //Velanes Instagram-ID
+                accessToken: '2902871725.1677ed0.6cf28ac3f9c041759202e3e1af8baa46'
             });
             feed.run();
         }
