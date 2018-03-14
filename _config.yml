@@ -14,13 +14,14 @@ facebook                  : DrogariaVelanes
 # Values for the jekyll-seo-tag gem (https://github.com/jekyll/jekyll-seo-tag)
 logo: /siteicon.png
 description: Drogarias Velanes
-#author:
-#  name:
-#  email:
-#  twitter: # twitter username without the @ symbol
-#social:
-#  name: #
-#  links: 
+author:
+  name:
+  email:
+  twitter: # twitter username without the @ symbol
+social:
+  name: #
+  links: 
+    # - https://github.com/CloudCannon/treat-jekyll-template
 
 # -----
 # Build
@@ -31,34 +32,34 @@ paginate: 10
 paginate_path: "/:num/"
 permalink: pretty
 
-#defaults:
-#  -
-#    scope:
-#      path: ""
-#      type: "posts"
-#    values:
-#      layout: "post"
-#      push_sidebar_down: true
-#      print_stylesheet: true
-#      comments: true
-#      _options:
-#        content:
-#          width: 1560
-#          height: 2000
-#        featured_image:
-#          width: 1560
-#          height: 2000
-#  -
-#    scope:
-#      path: ""
-#    values:
-#      layout: "default"
-#  -
-#    scope:
-#      path: "index.html"
-#    values:
-#      layout: "default"
-#      push_sidebar_down: true
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      push_sidebar_down: true
+      print_stylesheet: true
+      comments: true
+      _options:
+        content:
+          width: 1560
+          height: 2000
+        featured_image:
+          width: 1560
+          height: 2000
+  -
+    scope:
+      path: ""
+    values:
+      layout: "default"
+  -
+    scope:
+      path: "index.html"
+    values:
+      layout: "default"
+      push_sidebar_down: true
 
 plugins:
   - jekyll-sitemap
