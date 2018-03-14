@@ -19,8 +19,8 @@ collections: # A list of collections the CMS should be able to edit
       - {label: "Data de publicação", name: "date", widget: "datetime", format: "YYYY-MM-DD hh:mma"}
       - {label: "Imagem destaque", name: "image", widget: "image", required: false, tagname: ""}
       - {label: "Corpo do Texto", name: "body", widget: "markdown"}
-    meta:
-      - {label: "SEO Description", name: "description", widget: "text"}
+#    meta:
+#      - {label: "SEO Description", name: "description", widget: "text"}
 
 #  - name: "faq" # Used in routes, ie.: /admin/collections/:slug/edit
 #    label: "FAQ" # Used in the UI
@@ -30,38 +30,38 @@ collections: # A list of collections the CMS should be able to edit
 #      - {label: "Pergunta", name: "title", widget: "string", tagname: "h1"}
 #      - {label: "Resposta", name: "body", widget: "markdown"}
 
-  - name: "settings"
-    label: "Configurações"
-    delete: false # Prevent users from deleting documents in this collection
-    editor:
-      preview: false
-    files:
-      - name: "general"
-        label: "Configurações do Site"
-        file: "_data/settings.json"
-        description: "Configurações Gerais do Site"
-        fields:
-          - {label: "Título Global", name: "site_title", widget: "string"}
-          - label: "Configurações de Post"
-            name: posts
-            widget: "object"
-            fields:
-              - {label: "Número de posts na página inicial", name: front_limit, widget: number}
-              - {label: "Autor Primário", name: author, widget: string}
-              - {label: "Default Thumbnail", name: thumb, widget: image, class: "thumb"}
-
-      - name: "authors"
-        label: "Autores"
-        file: "_data/authors.yml"
-        description: "Descrição do Autor"
-        fields:
-          - name: authors
-            label: Authors
-            label_singular: "Autor"
-            widget: list
-            fields:
-              - {label: "Nome", name: "name", widget: "string"}
-              - {label: "Descrição", name: "description", widget: "markdown"}
+#  - name: "settings"
+#    label: "Configurações"
+#    delete: false # Prevent users from deleting documents in this collection
+#    editor:
+#      preview: false
+#    files:
+#      - name: "general"
+#        label: "Configurações do Site"
+#        file: "_data/settings.json"
+#        description: "Configurações Gerais do Site"
+#        fields:
+#          - {label: "Título Global", name: "site_title", widget: "string"}
+#          - label: "Configurações de Post"
+#            name: posts
+#            widget: "object"
+#            fields:
+#              - {label: "Número de posts na página inicial", name: front_limit, widget: number}
+#              - {label: "Autor Primário", name: author, widget: string}
+#              - {label: "Default Thumbnail", name: thumb, widget: image, class: "thumb"}
+#
+#      - name: "authors"
+#        label: "Autores"
+#        file: "_data/authors.yml"
+#        description: "Descrição do Autor"
+#        fields:
+#          - name: authors
+#            label: Authors
+#            label_singular: "Autor"
+#            widget: list
+#            fields:
+#              - {label: "Nome", name: "name", widget: "string"}
+#              - {label: "Descrição", name: "description", widget: "markdown"}
 
 #  - name: "kitchenSink" # all the things in one entry, for documentation and quick testing
 #    label: "Kitchen Sink"
@@ -154,4 +154,3 @@ collections: # A list of collections the CMS should be able to edit
 #                  - {label: "File", name: "file", widget: "file"}
 #                  - {label: "Select", name: "select", widget: "select", options: ["a", "b", "c"]}
 #                  - {label: "Hidden", name: "hidden", widget: "hidden", default: "hidden"}
-
