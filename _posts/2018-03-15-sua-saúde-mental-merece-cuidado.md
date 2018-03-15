@@ -1,7 +1,9 @@
 ---
 title: Sua saúde mental merece cuidado
 date: '2018-03-15 09:00am'
-image: /uploads/saude-mental.jpeg
+featured_image: /uploads/saude-mental.jpeg
+categories: blog
+
 ---
 Você sabia que a depressão é a doença que mais tira anos de vida saudável do brasileiro? Pessoas que sofrem com distúrbios de depressão apresentam uma tristeza profunda, perda de interesse generalizado, falta de ânimo, de apetite, ausência de prazer e oscilações de humor que podem culminar em pensamentos.
 
