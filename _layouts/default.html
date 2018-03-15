@@ -202,71 +202,43 @@
 
     {{ content }}
 
-    <!--footer 1 start -->
-    <footer class="footer footer-one">
+    <!--footer 3 start -->
+    <footer class="footer footer-three">
         <div class="primary-footer brand-bg">
             <div class="container">
                 <a href="#top" class="page-scroll btn-floating btn-large orange back-top waves-effect waves-light tt-animate btt" data-section="#top">
-                    <i class="material-icons">&#xE316;</i>
+                  <i class="material-icons">&#xE316;</i>
                 </a>
 
                 <div class="row">
-                    <div class="col-md-3 widget clearfix">
-                        <h2 class="white-text">Velanes</h2>
-                        <p>Sempre investindo e inovando para oferecer o melhor aos seus clientes e colaboradores.</p>
+                  <div class="col-md-12 text-center">
+                      <div class="footer-logo">
+                        <img src="assets/img/logo-mais.png" alt="">
+                      </div>
+                  </div><!-- /.col-md-12 -->
+                </div><!-- /.row -->
+            </div><!-- /.container -->
+        </div><!-- /.primary-footer -->
 
-                        <ul class="social-link tt-animate ltr">
-                            <li><a href="https://facebook.com/{{ site.facebook }}"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="https://instagram.com/{{ site.instagram }}"><i class="fa fa-instagram"></i></a></li>
-                            <li><a href="#"><i class="fa fa-rss"></i></a></li>
-                        </ul>
-                    </div>
-                    <!-- /.col-md-3 -->
-
-                    <div class="col-md-3 widget">
-                        <h2 class="white-text"> </h2>
-
-                        <ul class="footer-list">
-                            <li><a href="#">Sobre</a></li>
-                            <li><a href="#">Serviços</a></li>
-                            <li><a href="#">Notícias</a></li>
-                            <li><a href="#">Trabalhe Conosco</a></li>
-                            <li><a href="#">Contato</a></li>
-                        </ul>
-                    </div>
-                    <!-- /.col-md-3 -->
-
-                    <div class="col-md-3 widget">
-                        <h2 class="white-text">Facebook Feed</h2>
-
-                        <div id="twitterfeed" class="twitter-widget-wrapper">
-                            <!-- html code injected via javascript -->
-                        </div>
-                    </div>
-                    <!-- /.col-md-3 -->
-
-
-                    <div class="col-md-3 widget">
-                        <h2 class="white-text">Instagram Feed</h2>
-
-                    </div>
-                    <!-- /.col-md-3 -->
-                </div>
-                <!-- /.row -->
-            </div>
-            <!-- /.container -->
-        </div>
-        <!-- /.primary-footer -->
-
-        <div class="secondary-footer brand-bg darken-2">
+        <div class="secondary-footer brand-bg">
             <div class="container">
-                <span class="copy-text">&copy; {{ site.time | date: "%Y" }} <a href="{{ site.baseurl }}">Drogarias Velanes</a> &nbsp;  | &nbsp;  Todos os direitos reservados &nbsp;  | &nbsp;  Desenvolvido por <a href="#">Art3 Propaganda</a></span>
-            </div>
-            <!-- /.container -->
-        </div>
-        <!-- /.secondary-footer -->
+                <hr class="mb-20">
+                <div class="row">
+                  <div class="col-md-6">
+                    <span class="copy-text">&copy; {{ site.time | date: "%Y" }} <a href="{{ site.baseurl }}">Drogarias Velanes</a> &nbsp;  | &nbsp;  Todos os direitos reservados &nbsp;  | &nbsp;  Desenvolvido por <a href="http://art3propaganda.com.br">Art3 Propaganda</a></span>
+                  </div><!-- /.col-md-6 -->
+                  <div class="col-md-6">
+                      <ul class="social-link tt-animate ltr">
+                        <li><a href="https://facebook.com/{{ site.facebook }}"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="https://instagram.com/{{ site.instagram }}"><i class="fa fa-instagram"></i></a></li>
+                        <li><a href="#"><i class="fa fa-rss"></i></a></li>
+                      </ul>
+                  </div><!-- /.col-md-6 -->
+                </div><!-- /.row -->
+            </div><!-- /.container -->
+        </div><!-- /.secondary-footer -->
     </footer>
-    <!--footer 1 end-->
+    <!--footer 3 end-->
 
     <script>
       if (window.netlifyIdentity) {
