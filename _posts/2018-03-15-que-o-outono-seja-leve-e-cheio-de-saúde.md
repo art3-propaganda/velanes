@@ -3,7 +3,6 @@ title: Que o outono seja leve e cheio de saúde!
 categories: Blog
 date: '2018-03-20 08:00am'
 featured_image: /uploads/outono.jpeg
-
 ---
 Boas vindas ao início de mais uma estação. O outono é caracterizado por temperaturas mais baixas que a do verão e a quantidade de chuva maior. Portanto, separamos aqui algumas dicas de saúde e disposição para você aproveitar cada momento da temporada: 
 
