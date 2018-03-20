@@ -1,7 +1,7 @@
 ---
 title: Alongamentos para evitar dores musculares
 categories: Blog
-date: '2018-03-22 08:00am'
+date: '2018-03-22 08:05am'
 featured_image: /uploads/alongamentos.jpeg
 ---
 Quer evitar as dores musculares, mas não sabe por onde começar? Confira 4 formas de alongamentos super simples que irão melhorar seu bem-estar:
