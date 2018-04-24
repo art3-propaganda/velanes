@@ -26,6 +26,7 @@ social:
 # -----
 # Build
 
+future: false
 timezone: America/Bahia
 
 paginate: 10
