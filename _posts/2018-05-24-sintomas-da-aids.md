@@ -1,5 +1,5 @@
 ---
-title: 'Sintomas da AIDS surgem cerca de 8 a 10 anos após '
+title: Sintomas da AIDS surgem cerca de 8 a 10 anos após contágio
 categories: Blog
 date: '2018-05-24 8:53am'
 featured_image: /uploads/whatsapp-image-2018-05-23-at-18.21.45.jpeg
