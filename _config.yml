@@ -4,7 +4,7 @@
 title: Drogarias Velanes
 url: "drogariasvelanes.com.br"
 baseurl: 
-google_analytics_key:
+google_analytics_key: UA-71223332-3
 newsletter_action:
 disqus_shortname:
 rss                       : true # generate RSS feed and show it's icon in header
