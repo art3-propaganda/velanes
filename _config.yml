@@ -9,7 +9,7 @@ newsletter_action:
 disqus_shortname:
 rss                       : true # generate RSS feed and show it's icon in header
 instagram                 : drogariasvelanes
-facebook                  : DrogariaVelanes
+facebook                  : DrogariasVelanes
 
 # Values for the jekyll-seo-tag gem (https://github.com/jekyll/jekyll-seo-tag)
 logo: /siteicon.png
