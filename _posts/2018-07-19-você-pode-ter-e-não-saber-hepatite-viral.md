@@ -4,8 +4,6 @@ categories: Blog
 date: '2018-07-19 03:55pm'
 featured_image: /uploads/6700efc7-dba1-4d78-9f1e-73e6e169b49f.jpeg
 ---
-## Hepatite viral 
-
 As Hepatites são um conjunto de doenças caracterizadas por uma inflamação das células do fígado. Elas podem ser provocadas por agressões de agentes tóxicos, como por exemplo, o álcool, medicamentos assim como por doenças autoimunes, metabólicas e virais. Entretanto, as mais populares são as hepatites virais, ou seja, aquelas que são causadas por vírus. Elas são divididas em letras do alfabeto (A, B, C, D e E). Abaixo iremos descrever cada uma delas e seus tratamentos:
 
 ## Hepatite A
