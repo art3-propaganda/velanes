@@ -1,7 +1,7 @@
 ---
 title: 'Meta para 2019: uma vida mais saudável'
 categories: Blog
-date: '2018-12-09 08:00pm'
+date: '2018-12-09 08:00am'
 featured_image: /uploads/velanes_post.png
 ---
 Todo fim de ano é o momento de refletir o ano que está acabando e estabelecer metas para o ano que está por vir. Algumas metas, entra ano e sai ano, permanecem nos caderninhos. A perda de peso geralmente é uma das promessas mais feitas para o início do ano.
