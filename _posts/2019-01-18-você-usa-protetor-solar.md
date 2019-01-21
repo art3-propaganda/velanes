@@ -1,5 +1,5 @@
 ---
-title: Você usa Protetor solar?
+title: Você usa Protetor solar facial?
 categories: Blog
 date: '2019-01-17 07:00pm'
 featured_image: /uploads/blog_velanes.png
