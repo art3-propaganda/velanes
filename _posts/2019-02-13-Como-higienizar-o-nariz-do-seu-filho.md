@@ -1,7 +1,7 @@
 ---
 title: Como higienizar o nariz do seu filho
 categories: Blog
-date: '2019-02-13 07:00pm'
+date: '2019-02-12 07:00pm'
 featured_image: /uploads/higienizar-nariz.png
 ---
 
