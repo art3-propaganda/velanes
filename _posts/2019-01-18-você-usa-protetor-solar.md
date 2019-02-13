@@ -5,7 +5,7 @@ date: '2019-01-17 07:00pm'
 featured_image: /uploads/blog_velanes.png
 ---
 
-Cuidados com a pele estão em crescimento, o uso de protetor solar no corpo vem se tornando rotina na vida das pessoas. O protetor solar combate os danos dos raios solares no dia a dia, na praia ou piscina. Ele deve ser usado diariamente e não apenas no período do verão, onde o calor é mais intenso. 
+Cuidados com a pele estão em crescimento, o uso de protetor solar no corpo vem se tornando rotina na vida das pessoas. O protetor solar combate os danos dos raios solares no dia a dia, na praia ou piscina.Ele deve ser usado diariamente e não apenas no período do verão, onde o calor é mais intenso. 
 
 O crescimento na procura de protetor específico mostra o quanto as pessoas têm se importado mais com a pele. O protetor solar facial tornou-se o maior aliado do dia a dia de muitas pessoas e é um dos passos mais importantes da rotina de beleza, pois previne vários problemas de pele.
 
