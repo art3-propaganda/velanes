@@ -1,7 +1,7 @@
 ---
 title: O obstetra
 categories: Blog
-date: '2019-04-12 08:00pm'
+date: '2019-04-12 04:40pm'
 ---
 O médico obstetra é o profissional da medicina que acompanha a gestação da mulher. Esse
 
